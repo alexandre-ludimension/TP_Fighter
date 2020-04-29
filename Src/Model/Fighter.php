@@ -46,7 +46,7 @@ abstract class Fighter {
     public function fight($pFighter): array
     {
         $lActions = [];
-        $lHit = random_int(1,100) / 100;
+        $lHit = random_int(0,100);
         if($lHit <= $this->getHitPrecision())
         {
             $lNewActions = $pFighter->receiveHit($this->getForce());
@@ -59,7 +59,6 @@ abstract class Fighter {
         }
         
         return $lActions;
-
     }
 
     /**

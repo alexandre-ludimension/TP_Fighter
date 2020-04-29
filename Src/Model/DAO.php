@@ -16,19 +16,25 @@ class DAO
         //Declare fighters
         $lBrutus = new Brute("Brutus");
         $lBrutus->setPhoto("images/brutus.gif");
-        $lBrutus->init();
 
         $lMerlin = new Mage("Merlin");
         $lMerlin->setPhoto("images/merlin.png");
-        $lMerlin->init();
 
         $lTyrion = new Dwarf("Tyrion");
         $lTyrion->setPhoto("images/dwarf.jpg");
-        $lTyrion->init();
+
+        $lMerlin2 = new Mage("JeanDalf");
+        $lMerlin2->setPhoto("Images/jeandalf.png");
+
+        $lGimli = new Dwarf("Soleil du matin");
+        $lGimli->setPhoto("Images/gimli.png");
 
         $this->mFighters[$lBrutus->getName()] = $lBrutus;
         $this->mFighters[$lMerlin->getName()] = $lMerlin;
         $this->mFighters[$lTyrion->getName()] = $lTyrion;
+        $this->mFighters[$lMerlin2->getName()] = $lMerlin2;
+        $this->mFighters[$lGimli->getName()] = $lGimli;
+        
     }
 
     public static function get(): DAO // singleton pattern

@@ -19,7 +19,6 @@ class Mage extends Fighter {
     {
         parent::__construct($pName);
     }
-
     
     /**
      * @param $pForce 
@@ -28,8 +27,9 @@ class Mage extends Fighter {
     public function receiveHit($pForce): array 
     {
         $lActions = [];
-        parent::setLife($pForce);
+        parent::setLife($this->getLife()-$pForce);
         
+        $lNewLife = 0;
         $lActions[] = new ActionHit($this, $pForce, $this->getLife());
         if( $this->getLife() >0 )
         {
